@@ -231,6 +231,33 @@ export default function ComplaintDetailsPage() {
               </div>
             </div>
 
+            {/* Active Administrative Progress Remark Banner */}
+            {!activeComplaint.resolution?.resolutionNotes &&
+              activeComplaint.timeline
+                ?.slice()
+                .reverse()
+                .find((e) => (e.updaterRole === 'admin' || e.note) && e.status !== 'Submitted')?.note && (
+                <div className="glass-panel p-6 rounded-3xl border border-blue-500/30 bg-blue-500/5 shadow-sm space-y-2">
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400">
+                      <Clock className="w-5 h-5" />
+                      <h3 className="text-sm font-bold">Administration & Teacher Remark</h3>
+                    </div>
+                    <span className="text-[11px] px-2.5 py-0.5 rounded-full font-semibold bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30">
+                      {activeComplaint.status}
+                    </span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-medium">
+                    {
+                      activeComplaint.timeline
+                        .slice()
+                        .reverse()
+                        .find((e) => (e.updaterRole === 'admin' || e.note) && e.status !== 'Submitted')?.note
+                    }
+                  </p>
+                </div>
+              )}
+
             {/* Official Resolution Banner (if resolved/closed) */}
             {activeComplaint.resolution?.resolutionNotes && (
               <div className="glass-panel p-6 rounded-3xl border border-emerald-500/30 bg-emerald-500/5 shadow-sm space-y-3">

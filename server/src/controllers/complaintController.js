@@ -84,7 +84,8 @@ exports.createComplaint = async (req, res, next) => {
 exports.getStudentComplaints = async (req, res, next) => {
   try {
     const { status, category, search, priority } = req.query;
-    const query = { student: req.user._id };
+    const studentId = req.user._id || req.user.id;
+    const query = { student: studentId };
 
     if (status && status !== 'All') {
       query.status = status;
@@ -103,7 +104,10 @@ exports.getStudentComplaints = async (req, res, next) => {
       ];
     }
 
-    const complaints = await Complaint.find(query).sort({ createdAt: -1 });
+    const complaints = await Complaint.find(query)
+      .populate('timeline.updatedBy', 'name role')
+      .populate('resolution.resolvedBy', 'name email')
+      .sort({ createdAt: -1 });
 
     res.status(200).json({
       success: true,
@@ -319,6 +323,7 @@ exports.updateComplaintStatus = async (req, res, next) => {
     try {
       const io = getIO();
       if (io) {
+        io.emit('complaint:updated', complaint);
         io.emit(`complaint:${complaint._id}:updated`, complaint);
         io.emit('complaint:statusChanged', {
           id: complaint._id,
@@ -327,7 +332,6 @@ exports.updateComplaintStatus = async (req, res, next) => {
         });
       }
     } catch (socketErr) {}
-
     res.status(200).json({
       success: true,
       message: `Complaint status updated to "${status}".`,

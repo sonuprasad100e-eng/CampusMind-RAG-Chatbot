@@ -21,11 +21,12 @@ import {
 
 export default function StudentDashboardPage() {
   const { user } = useAuthStore();
-  const { complaints, fetchStudentComplaints, isLoading } = useComplaintStore();
+  const { complaints, fetchStudentComplaints, isLoading, initSocketListeners } = useComplaintStore();
 
   useEffect(() => {
     fetchStudentComplaints();
-  }, [fetchStudentComplaints]);
+    initSocketListeners('student');
+  }, [fetchStudentComplaints, initSocketListeners]);
 
   const submittedCount = complaints.filter((c) => c.status === 'Submitted').length;
   const inProgressCount = complaints.filter((c) =>

@@ -203,22 +203,40 @@ export const useComplaintStore = create((set, get) => ({
   },
 
   // Subscribe to live socket events
-  initSocketListeners: () => {
+  initSocketListeners: (userRole = 'student') => {
     const socket = getSocket();
     if (!socket) return;
 
+    socket.off('complaint:updated');
+    socket.off('complaint:statusChanged');
+    socket.off('complaint:new');
+
     socket.on('complaint:updated', (updated) => {
+      if (!updated || !updated._id) return;
       set((state) => ({
-        complaints: state.complaints.map((c) => (c._id === updated._id ? updated : c)),
+        complaints: state.complaints.map((c) => (c._id === updated._id ? { ...c, ...updated } : c)),
         activeComplaint:
-          state.activeComplaint?._id === updated._id ? updated : state.activeComplaint,
+          state.activeComplaint?._id === updated._id ? { ...state.activeComplaint, ...updated } : state.activeComplaint,
+      }));
+    });
+
+    socket.on('complaint:statusChanged', ({ id, status }) => {
+      if (!id) return;
+      set((state) => ({
+        complaints: state.complaints.map((c) => (c._id === id ? { ...c, status } : c)),
+        activeComplaint:
+          state.activeComplaint?._id === id ? { ...state.activeComplaint, status } : state.activeComplaint,
       }));
     });
 
     socket.on('complaint:new', () => {
-      const { fetchAdminComplaints, fetchComplaintStats } = get();
-      fetchAdminComplaints();
-      fetchComplaintStats();
+      const { fetchAdminComplaints, fetchComplaintStats, fetchStudentComplaints } = get();
+      if (userRole === 'admin') {
+        fetchAdminComplaints();
+        fetchComplaintStats();
+      } else {
+        fetchStudentComplaints();
+      }
     });
   },
 }));

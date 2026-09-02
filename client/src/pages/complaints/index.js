@@ -47,11 +47,13 @@ export default function StudentComplaintsHistoryPage() {
     searchTerm,
     setSearchTerm,
     isLoading,
+    initSocketListeners,
   } = useComplaintStore();
 
   useEffect(() => {
     fetchStudentComplaints();
-  }, [fetchStudentComplaints, filterStatus, filterCategory, filterPriority, searchTerm]);
+    initSocketListeners('student');
+  }, [fetchStudentComplaints, initSocketListeners, filterStatus, filterCategory, filterPriority, searchTerm]);
 
   const getStatusBadge = (status) => {
     switch (status) {
@@ -256,6 +258,30 @@ export default function StudentComplaintsHistoryPage() {
                       <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">
                         {item.description}
                       </p>
+
+                      {/* Official Resolution Summary (if resolved/closed) */}
+                      {item.resolution?.resolutionNotes && (
+                        <div className="mt-2 p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-800 dark:text-emerald-300 text-xs flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                          <div className="min-w-0">
+                            <span className="font-bold">Official Resolution: </span>
+                            <span className="line-clamp-2">{item.resolution.resolutionNotes}</span>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Active Administrative / Teacher Progress Remark */}
+                      {!item.resolution?.resolutionNotes && item.timeline?.slice().reverse().find((e) => (e.updaterRole === 'admin' || e.note) && e.status !== 'Submitted')?.note && (
+                        <div className="mt-2 p-2.5 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-800 dark:text-blue-300 text-xs flex items-start gap-2">
+                          <Clock className="w-3.5 h-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
+                          <div className="min-w-0">
+                            <span className="font-bold">Teacher / Admin Remark ({item.status}): </span>
+                            <span className="line-clamp-2">
+                              {item.timeline.slice().reverse().find((e) => (e.updaterRole === 'admin' || e.note) && e.status !== 'Submitted')?.note}
+                            </span>
+                          </div>
+                        </div>
+                      )}
 
                       <div className="flex items-center gap-4 text-[11px] text-slate-500 dark:text-slate-400 pt-1 flex-wrap">
                         <span className="flex items-center gap-1">
