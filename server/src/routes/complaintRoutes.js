@@ -42,10 +42,32 @@ const upload = multer({
 });
 
 // ==========================================
-// Student & General Authenticated Endpoints
+// Authenticated Middleware
 // ==========================================
 router.use(protect);
 
+// ==========================================
+// Admin Dedicated Endpoints (Before generic :id)
+// ==========================================
+router.get('/admin/list', authorize('admin'), complaintController.getAllComplaints);
+router.get('/admin/stats', authorize('admin'), complaintController.getComplaintStats);
+router
+  .route('/admin/:id/status')
+  .patch(authorize('admin'), complaintController.updateComplaintStatus)
+  .put(authorize('admin'), complaintController.updateComplaintStatus);
+router
+  .route('/admin/:id/assign')
+  .patch(authorize('admin'), complaintController.assignComplaint)
+  .put(authorize('admin'), complaintController.assignComplaint);
+router
+  .route('/admin/:id/priority')
+  .patch(authorize('admin'), complaintController.updateComplaintPriority)
+  .put(authorize('admin'), complaintController.updateComplaintPriority);
+router.delete('/admin/:id', authorize('admin'), complaintController.deleteComplaint);
+
+// ==========================================
+// Student & General Authenticated Endpoints
+// ==========================================
 router
   .route('/')
   .post(upload.array('attachments', 5), complaintController.createComplaint)
@@ -58,15 +80,5 @@ router
 router
   .route('/:id/comments')
   .post(complaintController.addComment);
-
-// ==========================================
-// Admin Dedicated Endpoints
-// ==========================================
-router.get('/admin/list', authorize('admin'), complaintController.getAllComplaints);
-router.get('/admin/stats', authorize('admin'), complaintController.getComplaintStats);
-router.patch('/admin/:id/status', authorize('admin'), complaintController.updateComplaintStatus);
-router.patch('/admin/:id/assign', authorize('admin'), complaintController.assignComplaint);
-router.patch('/admin/:id/priority', authorize('admin'), complaintController.updateComplaintPriority);
-router.delete('/admin/:id', authorize('admin'), complaintController.deleteComplaint);
 
 module.exports = router;

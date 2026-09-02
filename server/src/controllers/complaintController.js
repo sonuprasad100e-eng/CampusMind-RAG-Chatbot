@@ -291,13 +291,15 @@ exports.updateComplaintStatus = async (req, res, next) => {
       });
     }
 
+    const userId = req.user?._id || req.user?.id;
+
     complaint.status = status;
 
     // Add timeline event
     complaint.timeline.push({
       status,
-      updatedBy: req.user._id,
-      updaterRole: 'admin',
+      updatedBy: userId,
+      updaterRole: req.user?.role || 'admin',
       note: note || `Status transitioned to ${status} by administrator.`,
       timestamp: new Date(),
     });
@@ -306,7 +308,7 @@ exports.updateComplaintStatus = async (req, res, next) => {
     if (status === 'Resolved' || status === 'Closed') {
       complaint.resolution = {
         resolvedAt: new Date(),
-        resolvedBy: req.user._id,
+        resolvedBy: userId,
         resolutionNotes: resolutionNotes || note || 'Resolved by administration.',
       };
     }

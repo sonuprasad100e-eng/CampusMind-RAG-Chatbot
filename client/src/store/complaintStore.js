@@ -139,14 +139,18 @@ export const useComplaintStore = create((set, get) => ({
         note,
         resolutionNotes,
       });
-      set((state) => ({
-        complaints: state.complaints.map((c) => (c._id === id ? res.data.data : c)),
-        activeComplaint:
-          state.activeComplaint?._id === id ? res.data.data : state.activeComplaint,
-      }));
-      return { success: true };
+      const updated = res.data?.data;
+      if (updated) {
+        set((state) => ({
+          complaints: state.complaints.map((c) => (c._id === id ? updated : c)),
+          activeComplaint:
+            state.activeComplaint?._id === id ? updated : state.activeComplaint,
+        }));
+      }
+      return { success: true, data: updated };
     } catch (err) {
-      return { success: false, error: err.response?.data?.message || 'Failed to update status.' };
+      const msg = err.response?.data?.message || err.message || 'Failed to update status.';
+      return { success: false, error: msg };
     }
   },
 
