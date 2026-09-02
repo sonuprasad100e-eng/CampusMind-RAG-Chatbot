@@ -1,0 +1,14 @@
+# CampusMind University: Student Life, Technical Clubs & Annual Festivals
+
+## 1. Recognized Technical & Cultural Student Clubs
+CampusMind features over 25 active student-led societies:
+- **Codex Hackers Club:** Organizes weekly competitive programming jams, open-source workshops, and the 36-hour flagship HackMind Hackathon.
+- **AeroMind & Robotics Society:** Designs autonomous drones, rover bots, and participates in the University Rover Challenge.
+- **Rhythm & Soul (Music & Dance Society):** Manages college band performances and cultural choreography.
+- **Literary & Debating Society (LitDeb):** Hosts parliamentary debates, Model United Nations (MUN), and poetry slams.
+- **GreenEarth Eco Club:** Leads on-campus sustainability, tree plantation, and e-waste recycling campaigns.
+
+## 2. Annual Campus Festivals & Events
+- **InnovateX (National Technical Symposium):** Held annually in October. Features robotics combats, project expos, AI coding sprints, and guest lectures from industry leaders. Cash prizes exceed Rs. 5,00,000.
+- **Tarang (Annual Cultural Fest):** 3-day cultural extravaganza held in February featuring celebrity musical nights, EDM concerts, fashion shows, and street plays.
+- **Spardha (Inter-College Sports Meet):** Conducted in January across 12 sporting disciplines including Football, Basketball, Cricket, Badminton, and Table Tennis.

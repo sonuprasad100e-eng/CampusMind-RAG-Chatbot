@@ -1,0 +1,28 @@
+# CampusMind University: Examination Rules & Academic Evaluation Regulations
+
+## 1. Grading System & Cumulative Grade Point Average (CGPA)
+The university follows a 10-point relative grading scale:
+- O (Outstanding): 10 Grade Points (Marks >= 90%)
+- A+ (Excellent): 9 Grade Points (Marks 80-89%)
+- A (Very Good): 8 Grade Points (Marks 70-79%)
+- B+ (Good): 7 Grade Points (Marks 60-69%)
+- B (Above Average): 6 Grade Points (Marks 50-59%)
+- C (Pass): 5 Grade Points (Marks 40-49%)
+- F (Fail): 0 Grade Points (Marks < 40%)
+
+## 2. Minimum Attendance Requirement
+- Mandatory Minimum Attendance: Every student must maintain at least **75% physical attendance** in every registered course (theory and practical separately) to be eligible to sit for the End-Semester Examination.
+- Medical Condonation: A medical condonation of up to 10% (allowing minimum 65% attendance) may be granted by the Dean of Academic Affairs upon submission of certified medical records within 3 days of returning to campus.
+
+## 3. Evaluation Scheme & Weightage
+Each semester course is evaluated as follows:
+- Continuous Internal Assessment (CIA): 40%
+  - Mid-Term Assessment 1: 15%
+  - Mid-Term Assessment 2: 15%
+  - Quizzes, Assignments, & Class Participation: 10%
+- End-Semester Final Examination: 60%
+A student must score a minimum of 40% combined and at least 35% in the End-Semester Examination to pass the course.
+
+## 4. Supplementary / Re-Examination Policy
+- Students securing an 'F' grade in up to 3 subjects in an academic year may register for Supplementary Examinations conducted in July.
+- Re-evaluation fee is Rs. 800 per paper, with request window open for 7 days post result declaration.

@@ -1,0 +1,39 @@
+{
+  "name": "campusmind-server",
+  "version": "1.0.0",
+  "description": "Backend server and RAG pipeline for CampusMind",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "seed:admin": "node src/scripts/seedAdmin.js",
+    "seed:docs": "node src/scripts/seedSampleDocs.js",
+    "test:rag": "node src/scripts/testRAG.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "bcryptjs": "^2.4.3",
+    "bullmq": "^5.41.6",
+    "compression": "^1.7.5",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-validator": "^7.2.1",
+    "groq-sdk": "^1.6.0",
+    "helmet": "^8.0.0",
+    "ioredis": "^5.5.0",
+    "jsonwebtoken": "^9.0.2",
+    "mammoth": "^1.9.0",
+    "mongoose": "^8.10.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "openai": "^4.85.4",
+    "pdf-parse": "^1.1.1",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^10.1.4",
+    "nodemon": "^3.1.9"
+  }
+}

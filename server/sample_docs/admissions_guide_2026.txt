@@ -1,0 +1,43 @@
+# CampusMind University: Official Admissions & Fee Guide 2026-2027
+
+## 1. Undergraduate Programs Offered & Eligibility Criteria
+CampusMind University offers world-class undergraduate degree programs across diverse engineering and applied science disciplines:
+
+- **Bachelor of Technology (B.Tech) in Computer Science and Engineering (CSE):**
+  - Duration: 4 Years (8 Semesters)
+  - Eligibility: Minimum 75% aggregate in 10+2 (Physics, Chemistry, and Mathematics) or equivalent from a recognized board, along with a valid JEE Main score or CUET (UG) percentile of 85+.
+  - Total Seats: 180 seats.
+
+- **Bachelor of Technology (B.Tech) in Electronics & Communication Engineering (ECE):**
+  - Duration: 4 Years (8 Semesters)
+  - Eligibility: Minimum 70% aggregate in 10+2 with PCM.
+
+- **Bachelor of Technology (B.Tech) in Mechanical & Robotics Engineering:**
+  - Duration: 4 Years (8 Semesters)
+  - Eligibility: Minimum 65% aggregate in 10+2 with PCM.
+
+- **Master of Technology (M.Tech) in Artificial Intelligence & Data Science:**
+  - Duration: 2 Years (4 Semesters)
+  - Eligibility: B.Tech/B.E. in relevant discipline with minimum 60% or 6.5 CGPA and valid GATE score.
+
+## 2. Annual Tuition & Academic Fee Structure (2026-2027)
+- B.Tech (CSE / AI): Rs. 1,85,000 per academic year (payable in two semester installments of Rs. 92,500).
+- B.Tech (ECE / Mech): Rs. 1,50,000 per academic year.
+- M.Tech Programs: Rs. 1,20,000 per academic year.
+- One-time Security Deposit (Refundable at graduation): Rs. 15,000.
+- One-time Admission Processing Fee (Non-refundable): Rs. 5,000.
+
+## 3. Admission Timeline & Key Deadlines
+- Application Portal Opens: February 15, 2026
+- Phase 1 Application Deadline: May 30, 2026
+- Counseling and Seat Allocation Round 1: June 15, 2026
+- Orientation Day & Document Verification: August 1, 2026
+- Commencement of Classes: August 10, 2026
+
+## 4. Fee Refund Policy
+If a candidate withdraws their admission:
+- 15 days or more before the formally announced last date of admission: 100% refund of tuition fees (minus Rs. 1,000 processing fee).
+- Less than 15 days before the last date: 90% refund.
+- Up to 15 days after the last date: 80% refund.
+- Between 16 to 30 days after the last date: 50% refund.
+- More than 30 days after the formally announced last date: No tuition fee refund; security deposit is refunded.
