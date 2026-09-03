@@ -112,21 +112,21 @@ export default function NewComplaintPage() {
         <title>Submit New Grievance | CampusMind</title>
       </Head>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 transition-colors duration-200">
+      <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-8 transition-colors duration-200 min-w-0">
         {/* Header Breadcrumb */}
-        <div className="flex items-center gap-3 mb-6">
+        <div className="flex items-center gap-3 mb-6 min-w-0">
           <Link
             href="/complaints"
-            className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+            className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors flex-shrink-0"
           >
             <ArrowLeft className="w-4 h-4" />
           </Link>
-          <div>
-            <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
-              <PlusCircle className="w-6 h-6 text-emerald-500" />
-              Submit Student Grievance
+          <div className="min-w-0">
+            <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 truncate">
+              <PlusCircle className="w-6 h-6 text-emerald-500 flex-shrink-0" />
+              <span>Submit Student Grievance</span>
             </h1>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 truncate">
               Submit your concern directly to university administration and track progress step-by-step.
             </p>
           </div>
@@ -139,8 +139,8 @@ export default function NewComplaintPage() {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 space-y-5 shadow-sm">
+        <form onSubmit={handleSubmit} className="space-y-6 min-w-0">
+          <div className="glass-panel p-4 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 dark:border-slate-800 space-y-5 shadow-sm min-w-0">
             {/* Title Field */}
             <div>
               <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">

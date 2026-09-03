@@ -115,18 +115,18 @@ export default function FAQsPage() {
         <title>Campus FAQs & Knowledge Directory | CampusMind</title>
       </Head>
 
-      <div className="min-h-[calc(100vh-4rem)] bg-slate-50 dark:bg-slate-950 py-10 px-4 sm:px-6 lg:px-8 transition-colors">
-        <div className="max-w-5xl mx-auto space-y-8">
+      <div className="min-h-[calc(100vh-4rem)] bg-slate-50 dark:bg-slate-950 py-6 sm:py-10 px-3 sm:px-6 lg:px-8 transition-colors min-w-0">
+        <div className="max-w-5xl mx-auto space-y-6 sm:space-y-8 min-w-0">
           {/* Header Banner */}
-          <div className="text-center space-y-3">
+          <div className="text-center space-y-2.5 sm:space-y-3 min-w-0">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs font-semibold">
               <Sparkles className="w-3.5 h-3.5" />
               AI-Generated Knowledge Repository
             </div>
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Frequently Asked Questions
             </h1>
-            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            <p className="text-xs sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
               Find instant answers to common questions regarding admissions, fee schedules, hostel regulations, examination policies, and academic guidelines.
             </p>
           </div>

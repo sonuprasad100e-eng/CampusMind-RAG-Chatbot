@@ -17,8 +17,8 @@ export default function AdminDocumentsPage() {
         <title>Document Management | CampusMind Admin</title>
       </Head>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
-        <div>
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6 sm:space-y-8 min-w-0">
+        <div className="min-w-0">
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
             Knowledge Base Documents
           </h1>

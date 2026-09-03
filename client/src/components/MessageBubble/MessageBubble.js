@@ -113,14 +113,14 @@ export default function MessageBubble({ message, isStreaming = false }) {
 
   if (isUser) {
     return (
-      <div className="flex items-start justify-end gap-3 my-4 animate-slide-up">
-        <div className="max-w-2xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-4 py-3 rounded-2xl rounded-tr-none shadow-md">
-          <p className="text-sm font-normal whitespace-pre-wrap leading-relaxed">
+      <div className="flex items-start justify-end gap-2.5 sm:gap-3 my-4 animate-slide-up">
+        <div className="max-w-[85%] sm:max-w-2xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-2xl rounded-tr-none shadow-md min-w-0 break-words [overflow-wrap:anywhere]">
+          <p className="text-xs sm:text-sm font-normal whitespace-pre-wrap leading-relaxed break-words [overflow-wrap:anywhere]">
             {message.content}
           </p>
         </div>
-        <div className="w-8 h-8 rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-300 flex-shrink-0 select-none shadow-sm">
-          <User className="w-4 h-4" aria-hidden="true" />
+        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-300 flex-shrink-0 select-none shadow-sm mt-0.5">
+          <User className="w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden="true" />
         </div>
       </div>
     );
@@ -155,39 +155,39 @@ export default function MessageBubble({ message, isStreaming = false }) {
   const confidenceData = getConfidenceLevel(rawScore);
 
   return (
-    <div className="flex items-start gap-3.5 my-5 animate-slide-up group">
+    <div className="flex items-start gap-2.5 sm:gap-3.5 my-4 sm:my-5 animate-slide-up group min-w-0">
       {/* Bot Avatar */}
-      <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white flex-shrink-0 shadow-lg shadow-emerald-500/20 select-none">
-        <GraduationCap className="w-5 h-5" aria-hidden="true" />
+      <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white flex-shrink-0 shadow-lg shadow-emerald-500/20 select-none mt-0.5">
+        <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
       </div>
 
-      <div className="flex-1 max-w-3xl">
+      <div className="flex-1 min-w-0 max-w-3xl">
         {/* Main Bubble Content */}
         <div
-          className={`p-4 sm:p-5 rounded-2xl rounded-tl-none border shadow-md transition-colors ${
+          className={`p-3.5 sm:p-5 rounded-2xl rounded-tl-none border shadow-md transition-colors ${
             isUnanswerable
               ? 'bg-amber-500/10 border-amber-500/30 text-amber-900 dark:text-amber-200'
               : 'glass-panel border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200'
           }`}
         >
           {/* Header metadata bar - Rendered separately from the natural-language answer */}
-          <div className="flex items-center justify-between gap-2 mb-3 pb-2 border-b border-slate-100 dark:border-slate-800/60 select-none">
-            <div className="flex items-center gap-2 flex-wrap">
+          <div className="flex items-center justify-between gap-2 mb-3 pb-2 border-b border-slate-100 dark:border-slate-800/60 select-none flex-wrap sm:flex-nowrap">
+            <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap min-w-0">
               <span className="text-xs font-bold text-slate-900 dark:text-white tracking-wide">CampusMind</span>
               {!isStreaming && message.provider && getProviderBadge(message.provider)}
               {!isStreaming && !isUnanswerable && (
                 <span
-                  className={`flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded-full border animate-fade-in ${confidenceData.className}`}
+                  className={`flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded-full border animate-fade-in flex-shrink-0 ${confidenceData.className}`}
                   title="Confidence is calculated from vector chunk similarity scores against verified college documents"
                 >
-                  <ShieldCheck className={`w-3 h-3 ${confidenceData.iconColor}`} aria-hidden="true" />
-                  {confidenceData.label}
+                  <ShieldCheck className={`w-3 h-3 flex-shrink-0 ${confidenceData.iconColor}`} aria-hidden="true" />
+                  <span className="truncate">{confidenceData.label}</span>
                 </span>
               )}
             </div>
 
             {!isStreaming && (
-              <div className="flex items-center gap-1.5 opacity-80 group-hover:opacity-100 transition-opacity">
+              <div className="flex items-center gap-1 sm:gap-1.5 opacity-80 group-hover:opacity-100 transition-opacity ml-auto sm:ml-0 flex-shrink-0">
                 {/* Voice Audio Reader Button */}
                 <button
                   onClick={toggleSpeak}

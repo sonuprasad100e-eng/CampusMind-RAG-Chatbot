@@ -371,11 +371,11 @@ export default function DocumentTable({ refreshTrigger }) {
 
       {/* AI Document Summary & FAQs Modal */}
       {summaryModalDoc && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in">
-          <div className="glass-panel max-w-2xl w-full rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-2xl relative max-h-[85vh] flex flex-col">
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 animate-fade-in">
+          <div className="glass-panel max-w-2xl w-full rounded-2xl p-4 sm:p-6 border border-slate-200 dark:border-slate-700 shadow-2xl relative max-h-[85vh] flex flex-col">
             <button
               onClick={() => setSummaryModalDoc(null)}
-              className="absolute top-4 right-4 p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white"
+              className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white"
             >
               <X className="w-5 h-5" />
             </button>

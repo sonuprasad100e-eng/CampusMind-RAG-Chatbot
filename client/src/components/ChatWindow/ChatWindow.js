@@ -410,10 +410,10 @@ export default function ChatWindow() {
       )}
 
       {/* Main Chat Area */}
-      <main className="flex-1 flex flex-col h-full overflow-hidden relative">
+      <main className="flex-1 flex flex-col h-full overflow-hidden relative min-w-0 max-w-full">
         {/* Top Control Bar: Mobile Sidebar Toggle + Category Filters + Multilingual Selector + 1-Click Export */}
-        <div className="glass-panel border-b border-slate-200/80 dark:border-slate-800/80 px-3 sm:px-4 py-2 flex items-center justify-between gap-2 overflow-x-auto transition-colors">
-          <div className="flex items-center gap-2 overflow-x-auto">
+        <div className="glass-panel border-b border-slate-200/80 dark:border-slate-800/80 px-2.5 sm:px-4 py-2 flex items-center justify-between gap-2 overflow-x-auto transition-colors min-w-0 max-w-full">
+          <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto min-w-0 flex-1">
             {/* Mobile Sidebar Drawer Button */}
             <button
               onClick={() => setIsMobileSidebarOpen(true)}
@@ -423,7 +423,7 @@ export default function ChatWindow() {
               <MessageSquare className="w-4 h-4 text-emerald-500" />
             </button>
 
-            <div className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400 flex-shrink-0 pr-1">
+            <div className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400 flex-shrink-0 pr-1">
               <Filter className="w-3.5 h-3.5 text-emerald-500 dark:text-emerald-400" />
               <span className="hidden sm:inline font-medium">Filter:</span>
             </div>
@@ -432,7 +432,7 @@ export default function ChatWindow() {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
+                className={`px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium whitespace-nowrap transition-all flex-shrink-0 ${
                   selectedCategory === cat
                     ? 'bg-emerald-500 text-white font-semibold shadow-md shadow-emerald-500/20'
                     : 'glass-card border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white'
@@ -444,10 +444,10 @@ export default function ChatWindow() {
           </div>
 
           {/* Right Tools: Language Picker & Export */}
-          <div className="flex items-center gap-2 flex-shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
             {/* Multilingual Selector */}
-            <div className="flex items-center gap-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-2 py-1 shadow-sm">
-              <Globe className="w-3.5 h-3.5 text-emerald-500" />
+            <div className="flex items-center gap-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-1.5 sm:px-2 py-1 shadow-sm">
+              <Globe className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
               <select
                 value={selectedLanguage}
                 onChange={(e) => handleLanguageChange(e.target.value)}
@@ -498,30 +498,30 @@ export default function ChatWindow() {
         </div>
 
         {/* Messages Scroll Area */}
-        <div className="flex-1 overflow-y-auto px-4 sm:px-6 lg:px-8 py-6 space-y-4">
+        <div className="flex-1 overflow-y-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-4 min-w-0 max-w-full">
           {messages.length === 0 && !isStreaming ? (
             /* Empty State / Welcome Screen */
-            <div className="max-w-3xl mx-auto py-8 sm:py-12 text-center animate-fade-in">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white mx-auto shadow-xl shadow-emerald-500/20 mb-4">
-                <Sparkles className="w-8 h-8" />
+            <div className="max-w-3xl mx-auto py-6 sm:py-12 text-center animate-fade-in min-w-0">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white mx-auto shadow-xl shadow-emerald-500/20 mb-3 sm:mb-4">
+                <Sparkles className="w-7 h-7 sm:w-8 sm:h-8" />
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2">
+              <h2 className="text-xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2 px-2">
                 What would you like to know about Campus?
               </h2>
-              <p className="text-sm text-slate-600 dark:text-slate-400 max-w-lg mx-auto mb-8">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-lg mx-auto mb-6 sm:mb-8 px-2">
                 Ask any question about admissions, fees, hostel rules, placements, or exams. Answers are verified strictly against official college documents with multilingual & voice support.
               </p>
 
               {/* Initial Suggested Questions Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto text-left">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 max-w-2xl mx-auto text-left min-w-0">
                 {INITIAL_SUGGESTED_QUESTIONS.map((item, idx) => (
                   <div
                     key={idx}
                     onClick={() => handleSelectSuggested(item)}
-                    className="glass-card glass-card-hover p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 cursor-pointer flex items-center justify-between group shadow-sm"
+                    className="glass-card glass-card-hover p-3 sm:p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 cursor-pointer flex items-center justify-between group shadow-sm min-w-0"
                   >
-                    <div className="flex flex-col pr-2">
-                      <span className="text-xs font-medium text-slate-800 dark:text-slate-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                    <div className="flex flex-col pr-2 min-w-0">
+                      <span className="text-xs font-medium text-slate-800 dark:text-slate-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors truncate">
                         {item.text}
                       </span>
                       <span className="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wide mt-1">
@@ -535,7 +535,7 @@ export default function ChatWindow() {
             </div>
           ) : (
             /* Message List */
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-4xl mx-auto min-w-0">
               {messages.map((msg, index) => (
                 <MessageBubble key={msg._id || index} message={msg} />
               ))}
@@ -558,11 +558,11 @@ export default function ChatWindow() {
         </div>
 
         {/* Input Bar */}
-        <div className="p-4 sm:p-5 glass-panel border-t border-slate-200/80 dark:border-slate-800/80 transition-colors">
+        <div className="p-3 sm:p-5 glass-panel border-t border-slate-200/80 dark:border-slate-800/80 transition-colors min-w-0 max-w-full">
           {/* Dynamic Context-Aware Suggestions Chips Bar */}
           {messages.length > 0 && !isStreaming && (
-            <div className="max-w-4xl mx-auto mb-2 px-1 flex items-center gap-1.5 overflow-x-auto select-none">
-              <span className="flex items-center gap-1 text-[11px] font-semibold text-slate-500 dark:text-slate-400 whitespace-nowrap">
+            <div className="max-w-4xl mx-auto mb-2 px-1 flex items-center gap-1.5 overflow-x-auto select-none min-w-0 max-w-full">
+              <span className="flex items-center gap-1 text-[11px] font-semibold text-slate-500 dark:text-slate-400 whitespace-nowrap flex-shrink-0">
                 <Sparkles className="w-3 h-3 text-emerald-500 flex-shrink-0" />
                 Suggested:
               </span>
@@ -571,7 +571,7 @@ export default function ChatWindow() {
                   key={idx}
                   type="button"
                   onClick={() => sendMessage(suggestionText)}
-                  className="px-2.5 py-1 rounded-full text-xs font-medium glass-card border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 whitespace-nowrap transition-all duration-150 btn-interactive shadow-sm"
+                  className="px-2.5 py-1 rounded-full text-xs font-medium glass-card border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 whitespace-nowrap transition-all duration-150 btn-interactive shadow-sm flex-shrink-0"
                 >
                   {suggestionText}
                 </button>
@@ -580,9 +580,9 @@ export default function ChatWindow() {
           )}
           <form
             onSubmit={handleSend}
-            className="max-w-4xl mx-auto relative flex items-center gap-2"
+            className="max-w-4xl mx-auto relative flex items-center gap-2 min-w-0"
           >
-            <div className="relative flex-1">
+            <div className="relative flex-1 min-w-0">
               <input
                 ref={inputRef}
                 type="text"
@@ -593,11 +593,11 @@ export default function ChatWindow() {
                   isRecording
                     ? '🎙️ Listening to your voice... Speak now...'
                     : selectedCategory !== 'All'
-                    ? `Ask anything about ${selectedCategory} in ${LANGUAGES.find((l) => l.code === selectedLanguage)?.label || 'English'}...`
-                    : `Ask about fees, hostel rules, admissions, placements...`
+                    ? `Ask about ${selectedCategory}...`
+                    : `Ask about fees, hostel rules, admissions...`
                 }
                 disabled={isStreaming}
-                className={`w-full bg-white dark:bg-slate-900/90 border rounded-2xl px-4 py-3.5 pr-20 text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 disabled:opacity-50 transition-all duration-200 shadow-sm ${
+                className={`w-full bg-white dark:bg-slate-900/90 border rounded-2xl px-3.5 sm:px-4 py-3 sm:py-3.5 pr-14 sm:pr-20 text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 disabled:opacity-50 transition-all duration-200 shadow-sm min-w-0 ${
                   isRecording
                     ? 'border-rose-500 ring-2 ring-rose-500/30 animate-pulse'
                     : 'border-slate-200 dark:border-slate-700/80 focus:border-emerald-500'
@@ -609,7 +609,7 @@ export default function ChatWindow() {
                 type="button"
                 onClick={toggleRecording}
                 disabled={isStreaming}
-                className={`absolute right-3.5 top-1/2 -translate-y-1/2 p-2 rounded-xl btn-interactive ${
+                className={`absolute right-2 sm:right-3.5 top-1/2 -translate-y-1/2 p-1.5 sm:p-2 rounded-xl btn-interactive ${
                   isRecording
                     ? 'bg-rose-500 text-white animate-bounce shadow-lg shadow-rose-500/30'
                     : 'text-slate-400 hover:text-emerald-500 hover:bg-slate-100 dark:hover:bg-slate-800'
@@ -623,20 +623,20 @@ export default function ChatWindow() {
             <button
               type="submit"
               disabled={!inputMessage.trim() || isStreaming}
-              className="p-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 disabled:opacity-40 disabled:hover:from-emerald-600 text-white font-semibold shadow-lg shadow-emerald-500/20 btn-interactive flex-shrink-0 flex items-center justify-center"
+              className="p-3 sm:p-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 disabled:opacity-40 disabled:hover:from-emerald-600 text-white font-semibold shadow-lg shadow-emerald-500/20 btn-interactive flex-shrink-0 flex items-center justify-center"
             >
               {isStreaming ? (
-                <Loader2 className="w-5 h-5 animate-spin" />
+                <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />
               ) : (
-                <Send className="w-5 h-5" />
+                <Send className="w-4 h-4 sm:w-5 sm:h-5" />
               )}
             </button>
           </form>
-          <div className="text-center mt-2 flex items-center justify-center gap-2 text-[11px] text-slate-500 dark:text-slate-400">
+          <div className="text-center mt-2 flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">
             <span>CampusMind synthesizes answers strictly from verified college records.</span>
             <span>•</span>
             <span className="text-emerald-600 dark:text-emerald-400 font-medium">
-              Active Language: {LANGUAGES.find((l) => l.code === selectedLanguage)?.label}
+              Language: {LANGUAGES.find((l) => l.code === selectedLanguage)?.label}
             </span>
           </div>
         </div>

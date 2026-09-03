@@ -44,11 +44,11 @@ export default function AdminAnalyticsPage() {
         <title>Analytics & Knowledge Gaps | CampusMind</title>
       </Head>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8 transition-colors duration-200">
-        <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2.5">
-            <BarChart3 className="w-7 h-7 text-emerald-600 dark:text-emerald-400" />
-            Knowledge Base Gap Analysis
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6 sm:space-y-8 transition-colors duration-200 min-w-0">
+        <div className="min-w-0">
+          <h1 className="text-xl sm:text-3xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 sm:gap-2.5">
+            <BarChart3 className="w-6 h-6 sm:w-7 sm:h-7 text-emerald-600 dark:text-emerald-400 flex-shrink-0" />
+            <span>Knowledge Base Gap Analysis</span>
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
             Analyze unanswered student questions, identify missing policy documents, and inspect feedback.

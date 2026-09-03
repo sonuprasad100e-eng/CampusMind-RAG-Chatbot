@@ -122,8 +122,8 @@ export default function SettingsPage() {
         <title>Account Settings | CampusMind</title>
       </Head>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-        <div>
+      <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-6 sm:space-y-8 min-w-0">
+        <div className="min-w-0">
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">Account Settings</h1>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
             Manage your interface appearance, credentials, preferences, and data exports.
@@ -131,7 +131,7 @@ export default function SettingsPage() {
         </div>
 
         {/* Appearance / Theme Switcher Card */}
-        <div className="glass-panel p-6 rounded-2xl border border-slate-200 dark:border-slate-800 transition-colors">
+        <div className="glass-panel p-4 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-800 transition-colors min-w-0">
           <h3 className="text-base font-bold text-slate-900 dark:text-white mb-1 flex items-center gap-2">
             <Palette className="w-5 h-5 text-emerald-500 dark:text-emerald-400" />
             Appearance & Theme

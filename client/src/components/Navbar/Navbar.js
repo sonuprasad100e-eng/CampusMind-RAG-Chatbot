@@ -39,15 +39,15 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 w-full glass-panel border-b border-slate-200/80 dark:border-slate-800/80 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
-            <GraduationCap className="w-6 h-6 text-white" />
+        <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group min-w-0">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform flex-shrink-0">
+            <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
           </div>
-          <div className="flex flex-col">
-            <span className="font-outfit text-xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-1.5">
+          <div className="flex flex-col min-w-0">
+            <span className="font-outfit text-lg sm:text-xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-1.5 truncate">
               Campus<span className="text-emerald-500 dark:text-emerald-400">Mind</span>
             </span>
-            <span className="text-[10px] uppercase font-semibold tracking-wider text-slate-500 dark:text-slate-400 -mt-1">
+            <span className="text-[9px] sm:text-[10px] uppercase font-semibold tracking-wider text-slate-500 dark:text-slate-400 -mt-1 truncate">
               RAG & Grievance Portal
             </span>
           </div>
