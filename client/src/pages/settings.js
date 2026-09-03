@@ -145,7 +145,7 @@ export default function SettingsPage() {
             <button
               type="button"
               onClick={() => setTheme('dark')}
-              className={`p-4 rounded-xl border text-left transition-all flex flex-col justify-between gap-3 ${
+              className={`p-4 rounded-xl border text-left transition-all duration-150 flex flex-col justify-between gap-3 btn-interactive ${
                 theme === 'dark'
                   ? 'bg-emerald-500/10 border-emerald-500 text-emerald-600 dark:text-emerald-400 shadow-md shadow-emerald-500/10 ring-1 ring-emerald-500'
                   : 'glass-card border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-700'
@@ -169,7 +169,7 @@ export default function SettingsPage() {
             <button
               type="button"
               onClick={() => setTheme('light')}
-              className={`p-4 rounded-xl border text-left transition-all flex flex-col justify-between gap-3 ${
+              className={`p-4 rounded-xl border text-left transition-all duration-150 flex flex-col justify-between gap-3 btn-interactive ${
                 theme === 'light'
                   ? 'bg-emerald-500/10 border-emerald-500 text-emerald-600 dark:text-emerald-400 shadow-md shadow-emerald-500/10 ring-1 ring-emerald-500'
                   : 'glass-card border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-700'
@@ -193,7 +193,7 @@ export default function SettingsPage() {
             <button
               type="button"
               onClick={() => setTheme('system')}
-              className={`p-4 rounded-xl border text-left transition-all flex flex-col justify-between gap-3 ${
+              className={`p-4 rounded-xl border text-left transition-all duration-150 flex flex-col justify-between gap-3 btn-interactive ${
                 theme === 'system'
                   ? 'bg-emerald-500/10 border-emerald-500 text-emerald-600 dark:text-emerald-400 shadow-md shadow-emerald-500/10 ring-1 ring-emerald-500'
                   : 'glass-card border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-700'

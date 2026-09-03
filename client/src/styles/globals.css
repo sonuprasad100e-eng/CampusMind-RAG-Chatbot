@@ -293,28 +293,54 @@ html.light .markdown-content tr:nth-child(even) {
 
 /* Micro-Interaction & Stagger Utility Classes */
 .btn-interactive {
-  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease, background-color 0.15s ease;
+  transition: transform 0.16s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.16s ease, background-color 0.16s ease, border-color 0.16s ease;
 }
 
 .btn-interactive:hover:not(:disabled) {
-  transform: translateY(-1px) scale(1.015);
+  transform: translateY(-1.5px) scale(1.015);
 }
 
 .btn-interactive:active:not(:disabled) {
-  transform: translateY(0px) scale(0.97);
+  transform: translateY(0px) scale(0.975);
+}
+
+.btn-primary-glow:hover:not(:disabled) {
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.3), 0 8px 10px -6px rgba(16, 185, 129, 0.2);
 }
 
 .card-lift {
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.22s ease, background-color 0.2s ease;
 }
 
 .card-lift:hover {
-  transform: translateY(-3px);
+  transform: translateY(-3.5px);
+  box-shadow: 0 12px 28px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Skeleton Shimmer Loading */
+.skeleton-shimmer {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.03) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+html.light .skeleton-shimmer {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0.07) 50%, rgba(0, 0, 0, 0.03) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
 }
 
 /* Staggered Entrance Delays */
+.delay-75 {
+  animation-delay: 75ms;
+}
+
 .delay-100 {
   animation-delay: 100ms;
+}
+
+.delay-150 {
+  animation-delay: 150ms;
 }
 
 .delay-200 {
@@ -329,20 +355,41 @@ html.light .markdown-content tr:nth-child(even) {
   animation-delay: 400ms;
 }
 
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+/* Focus Visible State for Keyboard Accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #10b981;
+  outline-offset: 2px;
+}
+
 /* Accessibility: Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
+    animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
 
   .animate-float-subtle,
   .animate-pulse,
-  .animate-bounce {
+  .animate-bounce,
+  .animate-slide-up,
+  .animate-slide-down,
+  .animate-slide-right,
+  .animate-fade-in,
+  .animate-scale-in,
+  .skeleton-shimmer {
     animation: none !important;
+    transform: none !important;
   }
 }

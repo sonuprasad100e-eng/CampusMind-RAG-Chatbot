@@ -80,7 +80,7 @@ export default function AdminDashboardPage() {
           <>
             {/* Stat Cards Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-              <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm">
+              <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm card-lift animate-slide-up delay-75">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                     Total Documents
@@ -98,7 +98,7 @@ export default function AdminDashboardPage() {
                 </div>
               </div>
 
-              <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm">
+              <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm card-lift animate-slide-up delay-150">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                     Vector Chunks
@@ -115,7 +115,7 @@ export default function AdminDashboardPage() {
                 </div>
               </div>
 
-              <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm">
+              <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm card-lift animate-slide-up delay-200">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                     Questions Asked
@@ -133,7 +133,7 @@ export default function AdminDashboardPage() {
                 </div>
               </div>
 
-              <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm">
+              <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm card-lift animate-slide-up delay-300">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                     Unanswered Rate

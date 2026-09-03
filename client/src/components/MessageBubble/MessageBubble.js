@@ -233,13 +233,13 @@ export default function MessageBubble({ message, isStreaming = false }) {
 
           {/* Streaming Loading Dots Indicator */}
           {isStreaming && (!message.content || message.content.length < 5) ? (
-            <div className="flex items-center gap-2 py-2 text-xs text-slate-500 dark:text-slate-400 animate-fade-in">
-              <span className="inline-flex items-center gap-1 mr-1">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-bounce" style={{ animationDelay: '0ms' }} />
-                <span className="w-2 h-2 rounded-full bg-teal-500 animate-bounce" style={{ animationDelay: '150ms' }} />
-                <span className="w-2 h-2 rounded-full bg-blue-500 animate-bounce" style={{ animationDelay: '300ms' }} />
+            <div className="flex items-center gap-2.5 py-2.5 text-xs text-slate-600 dark:text-slate-300 animate-fade-in">
+              <span className="inline-flex items-center gap-1.5 mr-1">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-sm shadow-emerald-500/50 animate-bounce" style={{ animationDelay: '0ms' }} />
+                <span className="w-2.5 h-2.5 rounded-full bg-teal-500 shadow-sm shadow-teal-500/50 animate-bounce" style={{ animationDelay: '150ms' }} />
+                <span className="w-2.5 h-2.5 rounded-full bg-blue-500 shadow-sm shadow-blue-500/50 animate-bounce" style={{ animationDelay: '300ms' }} />
               </span>
-              <span>CampusMind is retrieving verified facts...</span>
+              <span className="font-medium tracking-wide">CampusMind is retrieving verified facts...</span>
             </div>
           ) : (
             /* Clean Natural-Language AI Answer - Full GFM Markdown Support */

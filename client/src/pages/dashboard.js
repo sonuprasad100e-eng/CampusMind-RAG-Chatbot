@@ -117,7 +117,7 @@ export default function StudentDashboardPage() {
 
         {/* Metric Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm">
+          <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm card-lift animate-slide-up delay-75">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 Total Submitted
@@ -134,7 +134,7 @@ export default function StudentDashboardPage() {
             </div>
           </div>
 
-          <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm">
+          <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm card-lift animate-slide-up delay-150">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 Awaiting Review
@@ -151,7 +151,7 @@ export default function StudentDashboardPage() {
             </div>
           </div>
 
-          <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm">
+          <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm card-lift animate-slide-up delay-200">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 In Progress
@@ -168,7 +168,7 @@ export default function StudentDashboardPage() {
             </div>
           </div>
 
-          <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm">
+          <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm card-lift animate-slide-up delay-300">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 Resolved & Closed
@@ -190,9 +190,9 @@ export default function StudentDashboardPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <Link
             href="/complaints/new"
-            className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500/40 group transition-all shadow-sm"
+            className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500/40 group card-lift transition-all shadow-sm"
           >
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-200">
               <PlusCircle className="w-5 h-5" />
             </div>
             <h4 className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
@@ -205,9 +205,9 @@ export default function StudentDashboardPage() {
 
           <Link
             href="/complaints"
-            className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500/40 group transition-all shadow-sm"
+            className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500/40 group card-lift transition-all shadow-sm"
           >
-            <div className="w-10 h-10 rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <div className="w-10 h-10 rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-200">
               <FileText className="w-5 h-5" />
             </div>
             <h4 className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
@@ -220,9 +220,9 @@ export default function StudentDashboardPage() {
 
           <Link
             href="/chat"
-            className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500/40 group transition-all shadow-sm"
+            className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-purple-500/40 group card-lift transition-all shadow-sm"
           >
-            <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-200">
               <MessageSquare className="w-5 h-5" />
             </div>
             <h4 className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">

@@ -64,7 +64,7 @@ export default function AdminAnalyticsPage() {
           <>
             {/* Top Metric Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm card-lift animate-slide-up delay-75">
                 <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   Total Questions Asked
                 </p>
@@ -76,7 +76,7 @@ export default function AdminAnalyticsPage() {
                 </p>
               </div>
 
-              <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm card-lift animate-slide-up delay-150">
                 <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   Unanswered / Low Confidence
                 </p>
@@ -88,7 +88,7 @@ export default function AdminAnalyticsPage() {
                 </p>
               </div>
 
-              <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div className="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm card-lift animate-slide-up delay-200">
                 <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   Positive Feedback Rate
                 </p>

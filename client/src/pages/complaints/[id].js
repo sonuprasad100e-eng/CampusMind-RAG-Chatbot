@@ -181,18 +181,18 @@ export default function ComplaintDetailsPage() {
                 return (
                   <div
                     key={step.key}
-                    className={`flex flex-col items-center p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border transition-all min-w-0 ${
+                    className={`flex flex-col items-center p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border transition-all duration-200 min-w-0 ${
                       isCurrent
-                        ? 'bg-emerald-500/15 border-emerald-500 text-emerald-600 dark:text-emerald-400 shadow-md ring-2 ring-emerald-500/20'
+                        ? 'bg-emerald-500/15 border-emerald-500 text-emerald-600 dark:text-emerald-400 shadow-md ring-2 ring-emerald-500/20 scale-[1.02]'
                         : isPassed
                         ? 'bg-slate-100 dark:bg-slate-800/80 border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200'
                         : 'bg-white dark:bg-slate-900/60 border-slate-200 dark:border-slate-800 text-slate-400'
                     }`}
                   >
                     <div
-                      className={`w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-[11px] sm:text-xs font-bold mb-1.5 sm:mb-2 flex-shrink-0 ${
+                      className={`w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-[11px] sm:text-xs font-bold mb-1.5 sm:mb-2 flex-shrink-0 transition-transform ${
                         isCurrent
-                          ? 'bg-emerald-500 text-white animate-pulse'
+                          ? 'bg-emerald-500 text-white animate-pulse shadow-md shadow-emerald-500/30'
                           : isPassed
                           ? 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400'
                           : 'bg-slate-200 dark:bg-slate-800 text-slate-500'

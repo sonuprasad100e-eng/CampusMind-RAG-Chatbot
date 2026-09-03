@@ -57,7 +57,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 max-w-md mx-auto sm:max-w-none mb-12 animate-slide-up delay-200">
             <Link
               href={isAuthenticated ? '/chat' : '/login'}
-              className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold text-sm shadow-xl shadow-emerald-600/25 btn-interactive flex items-center justify-center gap-2.5"
+              className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold text-sm shadow-xl shadow-emerald-600/25 btn-interactive btn-primary-glow flex items-center justify-center gap-2.5"
             >
               <GraduationCap className="w-5 h-5" />
               <span>{isAuthenticated ? 'Start Chatting' : 'Explore CampusMind'}</span>
@@ -85,21 +85,21 @@ export default function HomePage() {
 
           {/* Trust Indicators Bar (300ms delay) */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 max-w-4xl mx-auto pt-6 border-t border-slate-200/80 dark:border-slate-800/80 text-[11px] sm:text-xs font-medium text-slate-600 dark:text-slate-400 animate-fade-in delay-300">
-            <div className="flex items-center justify-center gap-1.5 p-2 rounded-xl bg-slate-100/50 dark:bg-slate-900/40 border border-slate-200/60 dark:border-slate-800/60 transition-transform duration-200 hover:-translate-y-0.5 min-w-0">
+            <div className="flex items-center justify-center gap-1.5 p-2.5 rounded-xl bg-slate-100/60 dark:bg-slate-900/50 border border-slate-200/70 dark:border-slate-800/70 transition-all duration-200 hover:-translate-y-0.5 hover:border-emerald-500/30 min-w-0 shadow-sm">
               <ShieldCheck className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-              <span className="truncate">Zero Hallucinations</span>
+              <span className="truncate font-semibold text-slate-700 dark:text-slate-300">Zero Hallucinations</span>
             </div>
-            <div className="flex items-center justify-center gap-1.5 p-2 rounded-xl bg-slate-100/50 dark:bg-slate-900/40 border border-slate-200/60 dark:border-slate-800/60 transition-transform duration-200 hover:-translate-y-0.5 min-w-0">
+            <div className="flex items-center justify-center gap-1.5 p-2.5 rounded-xl bg-slate-100/60 dark:bg-slate-900/50 border border-slate-200/70 dark:border-slate-800/70 transition-all duration-200 hover:-translate-y-0.5 hover:border-teal-500/30 min-w-0 shadow-sm">
               <BookOpen className="w-4 h-4 text-teal-500 flex-shrink-0" />
-              <span className="truncate">Page-Level Citations</span>
+              <span className="truncate font-semibold text-slate-700 dark:text-slate-300">Page-Level Citations</span>
             </div>
-            <div className="flex items-center justify-center gap-1.5 p-2 rounded-xl bg-slate-100/50 dark:bg-slate-900/40 border border-slate-200/60 dark:border-slate-800/60 transition-transform duration-200 hover:-translate-y-0.5 min-w-0">
+            <div className="flex items-center justify-center gap-1.5 p-2.5 rounded-xl bg-slate-100/60 dark:bg-slate-900/50 border border-slate-200/70 dark:border-slate-800/70 transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-500/30 min-w-0 shadow-sm">
               <Globe2 className="w-4 h-4 text-blue-500 flex-shrink-0" />
-              <span className="truncate">English • हिन्दी • मराठी</span>
+              <span className="truncate font-semibold text-slate-700 dark:text-slate-300">English • हिन्दी • मराठी</span>
             </div>
-            <div className="flex items-center justify-center gap-1.5 p-2 rounded-xl bg-slate-100/50 dark:bg-slate-900/40 border border-slate-200/60 dark:border-slate-800/60 transition-transform duration-200 hover:-translate-y-0.5 min-w-0">
+            <div className="flex items-center justify-center gap-1.5 p-2.5 rounded-xl bg-slate-100/60 dark:bg-slate-900/50 border border-slate-200/70 dark:border-slate-800/70 transition-all duration-200 hover:-translate-y-0.5 hover:border-amber-500/30 min-w-0 shadow-sm">
               <Zap className="w-4 h-4 text-amber-500 flex-shrink-0" />
-              <span className="truncate">Live Token Streaming</span>
+              <span className="truncate font-semibold text-slate-700 dark:text-slate-300">Live Token Streaming</span>
             </div>
           </div>
         </div>

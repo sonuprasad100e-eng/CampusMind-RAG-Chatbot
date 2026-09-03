@@ -220,7 +220,7 @@ export default function DocumentUploadForm({ onUploadSuccess }) {
           <button
             type="submit"
             disabled={selectedFiles.length === 0 || isUploading}
-            className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 disabled:opacity-40 text-white font-semibold text-xs shadow-lg shadow-emerald-600/20 transition-all flex items-center justify-center gap-2"
+            className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 disabled:opacity-40 text-white font-bold text-xs shadow-lg shadow-emerald-600/20 btn-interactive btn-primary-glow flex items-center justify-center gap-2"
           >
             {isUploading ? (
               <>

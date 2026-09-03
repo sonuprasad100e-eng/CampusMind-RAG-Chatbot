@@ -499,10 +499,10 @@ export default function AdminComplaintsPage() {
         {/* Modal: Assign Department */}
         {assignModalDoc && (
           <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in">
-            <div className="glass-panel max-w-md w-full rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-2xl relative">
+            <div className="glass-panel max-w-md w-full rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-2xl relative animate-scale-in">
               <button
                 onClick={() => setAssignModalDoc(null)}
-                className="absolute top-4 right-4 p-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                className="absolute top-4 right-4 p-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-400 hover:text-slate-900 dark:hover:text-white btn-interactive"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -529,7 +529,7 @@ export default function AdminComplaintsPage() {
                   <select
                     value={selectedDept}
                     onChange={(e) => setSelectedDept(e.target.value)}
-                    className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500"
+                    className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500 shadow-sm"
                   >
                     {DEPARTMENTS.map((dept) => (
                       <option key={dept} value={dept}>
@@ -548,7 +548,7 @@ export default function AdminComplaintsPage() {
                     value={staffName}
                     onChange={(e) => setStaffName(e.target.value)}
                     placeholder="e.g. Dr. Rajesh Sharma / Chief Warden"
-                    className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2 text-xs text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2 text-xs text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-emerald-500 shadow-sm"
                   />
                 </div>
 
@@ -561,7 +561,7 @@ export default function AdminComplaintsPage() {
                     value={assignNotes}
                     onChange={(e) => setAssignNotes(e.target.value)}
                     placeholder="Please inspect the premises and resolve within 24 hours..."
-                    className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl p-3 text-xs text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl p-3 text-xs text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-emerald-500 shadow-sm"
                   />
                 </div>
 
@@ -569,13 +569,13 @@ export default function AdminComplaintsPage() {
                   <button
                     type="button"
                     onClick={() => setAssignModalDoc(null)}
-                    className="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold"
+                    className="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold btn-interactive"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="px-5 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white text-xs font-bold shadow-md"
+                    className="px-5 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white text-xs font-bold shadow-md shadow-emerald-500/20 btn-interactive btn-primary-glow"
                   >
                     Confirm Assignment
                   </button>
@@ -588,7 +588,7 @@ export default function AdminComplaintsPage() {
         {/* Modal: Update Status */}
         {statusModalDoc && (
           <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in">
-            <div className="glass-panel max-w-md w-full rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-2xl relative">
+            <div className="glass-panel max-w-md w-full rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-2xl relative animate-scale-in">
               <button
                 onClick={() => setStatusModalDoc(null)}
                 className="absolute top-4 right-4 p-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-400 hover:text-slate-900 dark:hover:text-white"

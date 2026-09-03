@@ -150,7 +150,7 @@ export default function FAQsPage() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all duration-150 btn-interactive ${
                     selectedCategory === cat
                       ? 'bg-emerald-500 text-white font-semibold shadow-md shadow-emerald-500/20'
                       : 'glass-card border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
@@ -166,17 +166,17 @@ export default function FAQsPage() {
           <div className="space-y-3">
             {isLoading ? (
               <div className="flex items-center justify-center py-12 text-slate-400">
-                <Loader2 className="w-6 h-6 animate-spin mr-2" />
+                <Loader2 className="w-6 h-6 animate-spin mr-2 text-emerald-500" />
                 <span>Loading campus FAQs...</span>
               </div>
             ) : filteredFaqs.length === 0 ? (
-              <div className="text-center py-12 glass-panel rounded-2xl border border-slate-200 dark:border-slate-800">
+              <div className="text-center py-12 glass-panel rounded-2xl border border-slate-200 dark:border-slate-800 animate-scale-in">
                 <HelpCircle className="w-10 h-10 text-slate-400 mx-auto mb-2" />
                 <h3 className="text-base font-semibold text-slate-800 dark:text-slate-200">No matching FAQs found</h3>
                 <p className="text-xs text-slate-500 mt-1">Try another search term or ask the AI Assistant directly.</p>
                 <Link
                   href="/chat"
-                  className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600 text-white text-xs font-semibold hover:bg-emerald-500 transition-colors"
+                  className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold btn-interactive shadow-sm"
                 >
                   <MessageSquare className="w-3.5 h-3.5" />
                   Ask CampusMind Chatbot
@@ -188,7 +188,7 @@ export default function FAQsPage() {
                 return (
                   <div
                     key={faq.id || index}
-                    className="glass-card rounded-2xl border border-slate-200 dark:border-slate-800/80 overflow-hidden shadow-sm transition-all"
+                    className="glass-card rounded-2xl border border-slate-200 dark:border-slate-800/80 overflow-hidden shadow-sm hover:border-emerald-500/30 transition-all card-lift"
                   >
                     <button
                       onClick={() => toggleExpand(faq.id || index)}
@@ -209,8 +209,8 @@ export default function FAQsPage() {
                           {faq.question}
                         </h3>
                       </div>
-                      <div className="p-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 flex-shrink-0 mt-1">
-                        {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                      <div className="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 flex-shrink-0 mt-1 transition-transform duration-200">
+                        {isExpanded ? <ChevronUp className="w-4 h-4 text-emerald-500" /> : <ChevronDown className="w-4 h-4" />}
                       </div>
                     </button>
 
@@ -241,7 +241,7 @@ export default function FAQsPage() {
             </div>
             <Link
               href="/chat"
-              className="px-6 py-3 rounded-2xl bg-white text-emerald-700 font-bold text-sm shadow-lg hover:bg-emerald-50 transition-all hover:scale-105 flex-shrink-0 flex items-center gap-2"
+              className="px-6 py-3 rounded-2xl bg-white text-emerald-700 hover:bg-emerald-50 font-bold text-sm shadow-lg btn-interactive flex-shrink-0 flex items-center gap-2"
             >
               <MessageSquare className="w-4 h-4" />
               Chat with CampusMind
